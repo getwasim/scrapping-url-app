@@ -1,0 +1,24 @@
+== README
+
+Requirements:
+- Ruby version 2.2.2 or above
+- Postgresql Database
+
+
+Necessary steps to get the application up and running:
+- cp config/database.yml.example config/database.yml
+- open database.yml file and configure it as per your system database connection setting
+- rake db:create 
+- rake db:migrate 
+- rails server 
+Now, your server is running on localhost 3000.
+
+To check the endpoints open new terminal and run below commands:
+i) To save details -
+    curl -H "Content-Type: application/json" -X POST -d '{"url":"https://www.facebook.com"}' http://localhost:3000/api/v1/pages/save_url_data
+Replace url with the URL you want to scrap
+
+ii) To view pages -
+    curl -H "Content-Type: application/json" http://localhost:3000/api/v1/pages
+or
+Hit on browser "http://localhost:3000/api/v1/pages"

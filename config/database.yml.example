@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: scrappingurlapp_development
+
+test:
+  <<: *default
+  database: scrappingurlapp_test
+
+production:
+  <<: *default
+  database: scrappingurlapp_prod
